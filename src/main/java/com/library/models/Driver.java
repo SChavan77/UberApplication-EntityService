@@ -24,14 +24,17 @@ import java.util.List;
 public class Driver extends BaseModel{
 
     private String name;
-  private String address;
- private String phoneNumber;
+    private String address;
+    private String phoneNumber;
 
     @Column(nullable = true, unique = true)
     private String licenseNumber;
 
+    @Column
+    private String idCard;
+
     //1: N : driver has many bookings/reviews
-    @OneToMany (mappedBy = "driver",fetch= FetchType.LAZY)
+    @OneToMany(mappedBy = "driver",fetch= FetchType.LAZY)
     @Fetch(FetchMode.SUBSELECT) //means: fetch them in a batch
     private List<Booking> bookings=new ArrayList<>();
 }

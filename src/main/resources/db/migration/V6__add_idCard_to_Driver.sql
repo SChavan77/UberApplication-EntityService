@@ -1,0 +1,1 @@
+ALTER TABLE driver ADD id_card VARCHAR(255) NULL;
