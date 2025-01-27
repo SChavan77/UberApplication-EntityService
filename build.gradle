@@ -7,7 +7,7 @@ plugins {
 
 
 group = 'com.library'
-version = '0.0.2-SNAPSHOT'
+version = '0.0.3-SNAPSHOT'
 
 java {
 	toolchain {
@@ -27,7 +27,7 @@ tasks.withType(JavaCompile) {
 tasks.withType(Jar) {
 	manifest {
 		attributes 'Implementation-Title': 'Uber-EntityService',
-				'Implementation-Version': '0.0.2-SNAPSHOT'
+				'Implementation-Version': '0.0.3-SNAPSHOT'
 	}
 }
 publishing {
@@ -40,12 +40,11 @@ publishing {
 		maven {
 			url=uri('/Users/sushmithachavan/Documents/BackEndDev/Uber-EntityService')
 		}
+		}
 	}
-}
 
 repositories {
 	mavenCentral()
-
 }
 
 dependencies {

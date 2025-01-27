@@ -13,6 +13,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+/*@Table(indexes = {
+        @Index(columnList = "driver_id")
+})*/
 public class Booking extends BaseModel {
 
         //To specify it as a enum attribute. If not specified, it takes default ORDINAL
@@ -32,5 +35,11 @@ public class Booking extends BaseModel {
 
         @ManyToOne(fetch = FetchType.LAZY) //made it Lazy due to FETCHMODE impl
         private Rider rider;
+
+        @OneToOne
+        private ExactLocation pickUpLocation;
+
+        @OneToOne
+        private ExactLocation dropLocation;
 }
 
